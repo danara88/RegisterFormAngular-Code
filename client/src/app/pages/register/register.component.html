@@ -1,0 +1,106 @@
+<form 
+    class="formC  animated fadeIn fast"
+    [formGroup]="registerForm"
+    (ngSubmit)="register()">
+
+    <div class="formC__head">
+        <img src="./assets/img/authorization.svg" class="imgC__small">
+        <h3 class="formC__title">Create Account!</h3>
+    </div>
+
+    <div class="formC__body">
+
+        <div class="fomrC__group-double">
+            <!-- campo de NOMBRE -->
+            <div class="formC__group">
+                <span class="formC__group-label">Name:</span>
+                <input  type="text" 
+                        name="name" 
+                        placeholder="Insert your name" 
+                        class="formC__group-input"
+                        formControlName="name"
+                        [class.formC__error]="notValidName">
+                <small *ngIf="notValidName" class="text-danger">Only 4 to 20 digits and only letters</small>
+            </div>
+            <!-- campo de NOMBRE -->
+
+
+            <!-- campo de APELLIDOS -->
+            <div class="formC__group">
+                <span class="formC__group-label">Surname:</span>
+                <input  type="text" 
+                        name="surname" 
+                        placeholder="Insert your surname" 
+                        class="formC__group-input"
+                        formControlName="surname"
+                        [class.formC__error]="notValidSurname">
+                <small *ngIf="notValidSurname" class="text-danger">Only 4 to 40 digits and only letters</small>
+            </div>
+            <!-- campo de APELLIDOS -->
+        </div>
+
+        <!-- campo de NOMBRE DE USUARIO -->
+        <div class="formC__group">
+            <span class="formC__group-label">Nickname:</span>
+            <input  type="text" 
+                    name="nickname" 
+                    placeholder="Choose a nickname" 
+                    class="formC__group-input"
+                    formControlName="nickname"
+                    [class.formC__error]="notValidNickname">
+                    <small *ngIf="notValidNickname && messageRepeatedNickname == null" class="text-danger"> Nickname with 4 to 16 dgits and can contain numbers, letters and underscore. </small>
+                    <small *ngIf="notValidNickname && messageRepeatedNickname" class="text-danger">{{ messageRepeatedNickname  }}</small>
+        </div>
+        <!-- campo de NOMBRE DE USUARIO -->
+
+
+
+        <!-- campo de CORREO -->
+        <div class="formC__group">
+            <span class="formC__group-label">Email: </span>
+            <input  type="text" 
+                    name="email"   
+                    placeholder="Insert your a valid email" 
+                    class="formC__group-input"
+                    formControlName="email"
+                    [class.formC__error]="notValidEmail">
+            <small *ngIf="notValidEmail && messageRepeatedEmail == null" class="text-danger">Only valid email</small>
+            <small *ngIf="notValidEmail && messageRepeatedEmail" class="text-danger">{{ messageRepeatedEmail  }}</small>
+        </div>
+        <!-- campo de CORREO -->
+
+
+        <!-- campo de CONTRASEÑA -->
+        <div class="formC__group">
+            <span class="formC__group-label">Password: </span>
+            <input  type="password" 
+                    name="password" 
+                    placeholder="Insert a password (min length 7 characters)" 
+                    class="formC__group-input"
+                    formControlName="password"
+                    [class.formC__error]="notValidPassword"> 
+            <small *ngIf="notValidPassword" class="text-danger">Password only with 4 to 12 digists.</small>
+            
+        </div>
+        <!-- campo de CONTRASEÑA -->
+
+        <div class="formC__group formC__group--row">
+            <input  type="checkbox" 
+                    name="conditions" 
+                    class="formC__group-input"
+                    formControlName="conditions">
+            <span class="formC__group-label">I read all the conditions and I accept.</span>
+            <small *ngIf="notValidConditions" class="text-danger ml-5">You most accept the terms and conditions.</small>
+        </div>
+
+        <div class="formC__group">
+            <button type="submit" *ngIf="!loader" class="btnC">Accept</button>
+
+            <button *ngIf="loader" class="btnC btnC__disabled" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            </button>
+
+        </div>
+
+    </div>
+</form>

@@ -1,0 +1,25 @@
+<div class="formC" *ngIf="identity">
+    <div class="formC__head">
+        <img src="./assets/img/welcome.svg" class="imgC__small">
+        <h3 class="formC__title">Welcome to the app!</h3>
+        <h4>{{ identity.name }}</h4>
+    </div>
+    <div class="formC__body">
+        <div class="formC__group">
+            <button type="submit" class="btnC" (click)="signout()">Exit</button>
+        </div>
+    </div>
+</div>
+
+<div class="formC" *ngIf="!identity">
+    <div class="formC__head">
+        <img src="./assets/img/welcome.svg" class="imgC__small">
+        <h3 class="formC__title">You are not welcome to the app</h3>
+        <h4>Please get out !</h4>
+    </div>
+    <div class="formC__body">
+        <div class="formC__group">
+            <button type="submit" class="btnC" (click)="signout()">Exit</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --bgC: #f0f0f0;
+    --principalC: #fc5185;
+    --secondC: #364f6b;
+    --letterC: #393939;
+
+    --principalF: 'Open Sans', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,*:after, *:before {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.5rem;
+    font-family: var(--principalF);
+    background: var(--bgC);
+    color: var(--letterC);
+}
+h1,h2,h3,h4 {
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+.text-danger {
+    color: #F75959;
+    margin-top: .5rem;
+}
+.ml-5 {
+    margin-left: 2rem;
+}
+
+
+
+/* Estilos al formulario */
+.formC {
+    margin: 10rem auto;
+    background: #fff;
+    padding: 2rem;
+    width: 55rem;
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: .2rem .1rem .2rem .1rem rgba(0,0,0,0.1);
+    border-top: .5rem solid var(--secondC);
+}
+.formC__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formC__title {
+    margin: 2rem 0 .5rem 0
+}
+.formC__body {
+    margin-top: 2.5rem;
+}
+.fomrC__group-double {
+    display: flex;
+    justify-content: space-between;
+}
+.formC__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.formC__group-label {
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+}
+.formC__group-input {
+    padding: 1.5rem 1rem;
+    background: rgba(54, 79, 107, 0.1);
+    outline: none;
+    border-radius: .5rem;
+    transition: all .2s ease;
+    border: .2rem solid rgba(255, 255, 255, 0.0)
+}
+.formC__group-input:focus {
+    background: rgba(54, 79, 107, 0.15);
+}
+.formC__group--row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.formC__group--row .formC__group-label {
+    margin-left: 1rem;
+    padding-top: .4rem;
+}
+.formC__error {
+    border: .2rem solid #FB8080;
+}
+
+
+
+/* estilos del boton */
+.btnC {
+    border: none;
+    padding: 1rem 2rem;
+    background: var(--principalC);
+    color: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all .3s ease;
+    outline: none;
+}
+.btnC:hover {
+    background: #FC3170;
+    outline: none;
+}
+
+.btnC__disabled {
+    opacity: .7;
+    cursor: default;
+}
+.btnC__disabled:hover {
+    opacity: .7;
+    background: var(--principalC);
+}
+
+
+/* estilos para las imagenes */
+.imgC__small {
+    width: 6rem;
+    display: block;
+}
